@@ -2067,3 +2067,541 @@ button {
     opacity: 1;
   }
 }
+
+/* =========================================================
+   SCREENLY — UNIFIED DESIGN SYSTEM
+   PROFILE + COLLECTIONS
+   Mesmo padrão visual de MOVIES e TV SHOWS
+========================================================= */
+
+/* PALETA E PADRÕES */
+
+.profile-page,
+.collections-page {
+  color: var(--text);
+  animation: page-enter .3s ease;
+}
+
+.profile-page h1,
+.profile-page h2,
+.collections-page h1,
+.collections-page h2 {
+  font-family: 'Manrope', sans-serif;
+  color: var(--text);
+  letter-spacing: -.8px;
+}
+
+.profile-page .section-kicker,
+.collections-page .section-kicker {
+  color: #666e79;
+}
+
+/* =========================================================
+   BOTÕES — MESMO PADRÃO DA HOME
+========================================================= */
+
+.collection-create-button,
+.collection-submit,
+.profile-edit-button,
+.profile-save-button {
+  min-height: 42px;
+  padding: 0 17px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  border: 1px solid var(--accent);
+  border-radius: 9px;
+  background: var(--accent);
+  color: #17120a;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  transition: .2s;
+  cursor: pointer;
+  box-shadow: 0 5px 18px #f6a51b20;
+}
+
+.collection-create-button:hover,
+.collection-submit:hover,
+.profile-edit-button:hover,
+.profile-save-button:hover {
+  background: #ffc04b;
+  border-color: #ffc04b;
+  color: #17120a;
+  transform: translateY(-1px);
+}
+
+.collection-back,
+.profile-library-link {
+  color: var(--accent);
+}
+
+.collection-back:hover,
+.profile-library-link:hover {
+  color: var(--accent2);
+}
+
+/* Botões secundários */
+
+.collection-form-close,
+.profile-form-close,
+.profile-cancel-button {
+  border: 1px solid #343a42;
+  border-radius: 9px;
+  background: #11141999;
+  color: #f0f0f0;
+  transition: .2s;
+}
+
+.collection-form-close:hover,
+.profile-form-close:hover,
+.profile-cancel-button:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* =========================================================
+   COLLECTIONS
+========================================================= */
+
+.collections-page {
+  padding: 16px 0 50px;
+}
+
+.collections-heading,
+.collection-detail-toolbar {
+  align-items: center;
+  margin: 9px 0 27px;
+  gap: 20px;
+}
+
+.collections-heading h2,
+.collection-detail-toolbar h2 {
+  margin: 9px 0 5px;
+  color: var(--text);
+  font: 800 clamp(25px, 3vw, 34px) 'Manrope', sans-serif;
+  letter-spacing: -1.2px;
+}
+
+.collection-detail-toolbar > div > span {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.collections-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.collection-card {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--panel);
+  transition: border-color .2s, transform .2s;
+}
+
+.collection-card:hover {
+  border-color: #55504a;
+  transform: translateY(-3px);
+}
+
+.collection-card-open {
+  color: var(--text);
+}
+
+.collection-art {
+  background: var(--panel2);
+}
+
+.collection-art-empty {
+  background: var(--panel2);
+  color: var(--accent);
+}
+
+.collection-card-info {
+  padding: 17px;
+  align-items: center;
+}
+
+.collection-card-info h3 {
+  color: var(--text);
+  font: 700 14px 'Manrope', sans-serif;
+}
+
+.collection-card-info p {
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.collection-count {
+  color: var(--accent2);
+  font-size: 10px;
+}
+
+.collection-delete {
+  border: 1px solid #343a42;
+  background: #0b0e12e8;
+  color: #fff;
+}
+
+.collection-delete:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #17120a;
+}
+
+.collections-empty {
+  min-height: 270px;
+  margin-top: 20px;
+  border: 1px dashed #343a42;
+  border-radius: 12px;
+  background: var(--panel);
+}
+
+.collections-empty-icon {
+  border: 1px solid #343a42;
+  background: var(--panel2);
+  color: var(--accent);
+}
+
+.collections-empty h2 {
+  color: var(--text);
+  font: 700 21px 'Manrope', sans-serif;
+}
+
+.collections-empty p {
+  color: var(--muted);
+}
+
+.collection-create-form,
+.collection-add-panel {
+  max-width: 600px;
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--panel);
+}
+
+.collection-form-heading {
+  color: var(--text);
+  font: 700 17px 'Manrope', sans-serif;
+}
+
+.collection-create-form label,
+.collection-add-panel label {
+  color: var(--soft);
+}
+
+.collection-create-form input,
+.collection-create-form textarea,
+.collection-add-controls select {
+  border: 1px solid #303740;
+  border-radius: 8px;
+  background: #1a1f25;
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+}
+
+.collection-create-form input:focus,
+.collection-create-form textarea:focus,
+.collection-add-controls select:focus {
+  border-color: var(--accent);
+}
+
+.collection-remove-title {
+  border: 1px solid #343a42;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--muted);
+  transition: .2s;
+}
+
+.collection-remove-title:hover {
+  border-color: var(--accent);
+  background: transparent;
+  color: var(--accent);
+}
+
+/* =========================================================
+   PROFILE — CABEÇALHO
+========================================================= */
+
+.profile-cover {
+  min-height: 205px;
+  border: 1px solid var(--line);
+  border-radius: 13px;
+  background:
+    linear-gradient(90deg, rgba(9,11,14,.94), rgba(9,11,14,.25)),
+    linear-gradient(0deg, rgba(9,11,14,.7), transparent),
+    url("https://image.tmdb.org/t/p/original/8b8R8l88Qje9dn9OE8PY05Nxl1X.jpg")
+    center 42% / cover,
+    var(--panel);
+}
+
+.profile-cover-label,
+.profile-section-count {
+  color: var(--accent);
+  letter-spacing: 1.5px;
+}
+
+.profile-identity {
+  gap: 18px;
+}
+
+.profile-avatar {
+  border: 5px solid var(--bg);
+  background: var(--panel2);
+  color: var(--accent);
+  box-shadow: 0 0 0 1px var(--line);
+}
+
+.profile-identity-info h1 {
+  color: var(--text);
+  font-family: 'Manrope', sans-serif;
+  font-weight: 800;
+}
+
+.profile-identity-info h1 span {
+  color: var(--accent);
+}
+
+.profile-username {
+  color: var(--muted);
+}
+
+.profile-bio {
+  color: var(--soft);
+  line-height: 1.7;
+}
+
+/* =========================================================
+   PROFILE — ESTATÍSTICAS
+========================================================= */
+
+.profile-stats {
+  margin: 25px 0 30px;
+  padding: 20px 10px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--panel);
+}
+
+.profile-stat {
+  border-right: 1px solid var(--line);
+}
+
+.profile-stat-number {
+  color: var(--accent);
+  font-family: 'Manrope', sans-serif;
+}
+
+.profile-stat-label {
+  color: var(--muted);
+  letter-spacing: 1.2px;
+}
+
+/* =========================================================
+   PROFILE — PAINÉIS E CARDS
+========================================================= */
+
+.profile-content-grid {
+  gap: 20px;
+}
+
+.profile-main-column,
+.profile-side-column {
+  gap: 20px;
+}
+
+.profile-section {
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--panel);
+}
+
+.profile-section-heading {
+  margin-bottom: 19px;
+}
+
+.profile-section h2 {
+  color: var(--text);
+  font: 700 20px 'Manrope', sans-serif;
+}
+
+.profile-favorite-card {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--panel2);
+}
+
+.profile-favorite-label {
+  color: var(--accent);
+}
+
+.profile-favorite-art {
+  border-radius: 8px;
+  background: #20242a;
+}
+
+.profile-favorite-info strong,
+.profile-activity-info strong {
+  color: var(--text);
+}
+
+.profile-favorite-info span,
+.profile-activity-info small {
+  color: var(--muted);
+}
+
+.profile-activity-item {
+  border-bottom: 1px solid var(--line);
+}
+
+.profile-progress {
+  background: #343a42;
+}
+
+.profile-progress i {
+  background: var(--accent);
+}
+
+.profile-activity-percent {
+  color: var(--accent);
+}
+
+.profile-preference {
+  border-bottom: 1px solid var(--line);
+}
+
+.profile-preference span,
+.profile-muted {
+  color: var(--muted);
+}
+
+.profile-preference strong {
+  color: var(--accent2);
+}
+
+.profile-library-card p {
+  color: var(--muted);
+}
+
+.profile-library-link {
+  border-top: 1px solid var(--line);
+}
+
+/* =========================================================
+   PROFILE — FORMULÁRIO DE EDIÇÃO
+========================================================= */
+
+.profile-edit-form {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--panel);
+}
+
+.profile-form-header h2 {
+  color: var(--text);
+  font-family: 'Manrope', sans-serif;
+}
+
+.profile-edit-form label {
+  color: var(--soft);
+}
+
+.profile-edit-form input,
+.profile-edit-form textarea,
+.profile-edit-form select {
+  border: 1px solid #303740;
+  border-radius: 8px;
+  background: #1a1f25;
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+}
+
+.profile-edit-form input:focus,
+.profile-edit-form textarea:focus,
+.profile-edit-form select:focus {
+  border-color: var(--accent);
+}
+
+.profile-input-prefix {
+  border: 1px solid #303740;
+  border-radius: 8px;
+  background: #1a1f25;
+  color: var(--accent);
+}
+
+.profile-input-prefix input {
+  background: transparent;
+}
+
+.profile-cancel-button {
+  padding: 0 17px;
+  min-height: 42px;
+}
+
+/* =========================================================
+   RESPONSIVIDADE
+========================================================= */
+
+@media (max-width: 900px) {
+  .collections-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .profile-content-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .collections-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .collections-heading,
+  .collection-detail-toolbar {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .collection-add-controls {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .collection-delete {
+    opacity: 1;
+  }
+
+  .profile-cover {
+    min-height: 155px;
+    padding: 17px;
+  }
+
+  .profile-favorites {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .profile-favorite-art {
+    height: 135px;
+  }
+
+  .profile-section {
+    padding: 17px;
+  }
+
+  .profile-form-row {
+    grid-template-columns: 1fr;
+  }
+}
