@@ -1,0 +1,276 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0b0d10" />
+  <title>Screenly — Descubra seu próximo filme</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="profile.css">
+</head>
+<body>
+
+  <div class="app-shell">
+
+    <aside class="sidebar" id="sidebar">
+
+      <a class="brand" href="#">
+        <span class="brand-mark"><i></i><i></i><i></i></span>
+        <span>SCREENLY</span>
+      </a>
+
+      <div class="side-label">MENU</div>
+
+      <nav class="main-nav">
+        <button class="nav-item active" data-view="discover">
+          <span class="nav-icon">◉</span>Discover
+        </button>
+
+        <button class="nav-item" data-view="movies">
+          <span class="nav-icon">▤</span>Movies
+        </button>
+
+        <button class="nav-item" data-view="shows">
+          <span class="nav-icon">▣</span>TV Shows
+        </button>
+
+        <button class="nav-item" data-view="watchlist">
+          <span class="nav-icon">♧</span>My Watchlist
+          <span class="nav-count" id="watch-count">0</span>
+        </button>
+
+        <button class="nav-item" data-view="collections">
+          <span class="nav-icon">▢</span>Collections
+        </button>
+      </nav>
+
+      <div class="sidebar-bottom">
+
+        <div class="upgrade-card">
+          <span class="upgrade-symbol">✦</span>
+          <strong>Your world of cinema</strong>
+          <p>Keep track of everything you love.</p>
+          <button class="text-link" data-view="collections">
+            Explore library <span>↗</span>
+          </button>
+        </div>
+
+        <button class="profile-mini">
+          <span class="avatar avatar-small">A</span>
+          <span>
+            <strong>Alex Morgan</strong>
+            <small>Free account</small>
+          </span>
+          <span class="more">···</span>
+        </button>
+
+      </div>
+    </aside>
+
+    <main class="main-area">
+
+      <header class="topbar">
+
+        <button class="mobile-menu" id="mobile-menu">☰</button>
+
+        <div class="greeting">
+          Good evening, <strong>Alex</strong>
+          <span class="greeting-dot">✦</span>
+        </div>
+
+        <div class="top-actions">
+
+          <label class="search-box">
+            <span>⌕</span>
+            <input
+              type="search"
+              id="global-search"
+              placeholder="Search movies, series..."
+              autocomplete="off"
+            />
+            <kbd>⌘ K</kbd>
+          </label>
+
+          <button class="icon-button notification-button" id="notifications">
+            ♧<i></i>
+          </button>
+
+          <button class="avatar avatar-top">A</button>
+
+        </div>
+      </header>
+
+      <div class="content" id="content">
+
+        <section class="hero">
+
+          <div class="hero-copy">
+
+            <span class="eyebrow">
+              <span class="eyebrow-line"></span>
+              FEATURED TONIGHT
+            </span>
+
+            <h1>DUNE: PART TWO</h1>
+
+            <p>
+              Paul Atreides unites with Chani and the Fremen while on a
+              warpath of revenge against the conspirators who destroyed
+              his family.
+            </p>
+
+            <div class="hero-meta">
+              <span>Sci-Fi</span>
+              <b>·</b>
+              <span>Adventure</span>
+              <b>·</b>
+              <span>2024</span>
+              <b>·</b>
+              <span class="rating">★ 8.7</span>
+            </div>
+
+            <div class="hero-buttons">
+
+              <button class="btn btn-primary" data-detail="Dune: Part Two">
+                ▶ <span>Explore movie</span>
+              </button>
+
+              <button class="btn btn-outline" data-add="Dune: Part Two">
+                <span class="plus">＋</span>
+                Add to watchlist
+              </button>
+
+            </div>
+          </div>
+
+          <div class="hero-image"></div>
+
+          <div class="hero-pagination">
+            <span class="selected"></span>
+            <i></i><i></i><i></i>
+          </div>
+
+        </section>
+
+        <section class="section">
+
+          <div class="section-heading">
+            <div>
+              <span class="section-kicker">WHAT'S POPULAR</span>
+              <h2>Trending</h2>
+            </div>
+
+            <button class="see-all" data-view="movies">
+              See all <span>→</span>
+            </button>
+          </div>
+
+          <div class="poster-grid" id="trending-grid"></div>
+
+        </section>
+
+        <section class="section continue-section">
+
+          <div class="section-heading">
+            <div>
+              <span class="section-kicker">PICK UP WHERE YOU LEFT OFF</span>
+              <h2>Continue exploring</h2>
+            </div>
+
+            <button class="see-all" data-view="shows">
+              See all <span>→</span>
+            </button>
+          </div>
+
+          <div class="continue-grid" id="continue-grid"></div>
+
+        </section>
+
+        <section class="section">
+
+          <div class="section-heading">
+            <div>
+              <span class="section-kicker">CURATED FOR YOUR TASTE</span>
+              <h2>Picked for you</h2>
+            </div>
+
+            <button class="see-all" data-view="movies">
+              Discover more <span>→</span>
+            </button>
+          </div>
+
+          <div class="poster-grid recommendations" id="recommend-grid"></div>
+
+        </section>
+
+        <section class="community-strip">
+
+          <div>
+            <span class="section-kicker">BEYOND THE SCREEN</span>
+            <h2>Good stories are better shared.</h2>
+            <p>
+              Save your favorites, build collections and keep your
+              personal cinema close.
+            </p>
+          </div>
+
+          <button class="btn btn-outline" data-view="collections">
+            Explore collections <span>↗</span>
+          </button>
+
+        </section>
+
+        <footer class="footer">
+          <span>© 2026 SCREENLY</span>
+          <span>Made for people who love stories.</span>
+        </footer>
+
+      </div>
+    </main>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <div class="modal-backdrop" id="modal" aria-hidden="true">
+
+    <div class="detail-modal">
+
+      <button class="modal-close" id="modal-close">×</button>
+
+      <div class="modal-art" id="modal-art"></div>
+
+      <div class="modal-body">
+
+        <span class="eyebrow">SCREENLY TITLE</span>
+
+        <h2 id="modal-title"></h2>
+
+        <div class="modal-meta" id="modal-meta"></div>
+
+        <p id="modal-description"></p>
+
+        <div class="modal-actions">
+
+          <button class="btn btn-primary" id="modal-add">
+            ＋ Add to watchlist
+          </button>
+
+          <button class="btn btn-outline" id="modal-close-secondary">
+            Close
+          </button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+
+</body>
+</html>
