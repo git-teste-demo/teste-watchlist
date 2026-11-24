@@ -1,0 +1,424 @@
+/* =========================================================
+   SCREENLY — DISCOVER
+   Página inicial e recomendações
+========================================================= */
+
+/* DESTAQUE PRINCIPAL */
+
+.hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 296px;
+  margin-bottom: 30px;
+  overflow: hidden;
+  border: 1px solid #292d33;
+  border-radius: 14px;
+  background: #211810;
+  isolation: isolate;
+}
+
+.hero:after {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(
+    90deg,
+    rgba(12,12,14,.97) 0%,
+    rgba(15,13,12,.85) 30%,
+    rgba(18,13,10,.28) 62%,
+    rgba(10,10,10,.02) 100%
+  );
+  content: "";
+}
+
+.hero-image {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background-image: url('https://image.tmdb.org/t/p/original/1pdfLvkbY9ohJlCjQH2CZjjYVvJ.jpg');
+  background-position: center 42%;
+  background-size: cover;
+  opacity: .92;
+}
+
+.hero-copy {
+  z-index: 1;
+  max-width: 510px;
+  padding: 30px 28px;
+}
+
+.eyebrow {
+  color: var(--accent);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.3px;
+}
+
+.eyebrow-line {
+  display: inline-block;
+  width: 17px;
+  height: 1px;
+  margin-right: 7px;
+  background: var(--accent);
+  vertical-align: middle;
+}
+
+.hero h1 {
+  margin: 13px 0 9px;
+  font: 800 clamp(28px,3.2vw,43px) 'Manrope', sans-serif;
+  letter-spacing: -1.8px;
+  line-height: 1.1;
+}
+
+.hero-copy p {
+  max-width: 390px;
+  margin: 0 0 12px;
+  color: #d0d0d0;
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.hero-meta {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: #aeb2b8;
+  font-size: 12px;
+}
+
+.hero-meta b {
+  color: #60656d;
+  font-weight: 400;
+}
+
+.rating {
+  color: var(--accent2);
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 12px;
+  margin-top: 17px;
+}
+
+.hero-pagination {
+  position: absolute;
+  right: 27px;
+  bottom: 18px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.hero-pagination i {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #ffffff55;
+}
+
+.hero-pagination .selected {
+  width: 20px;
+  height: 8px;
+  border-radius: 5px;
+  background: var(--accent);
+}
+
+/* SEÇÕES */
+
+.section {
+  margin-bottom: 29px;
+}
+
+.section-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  margin-bottom: 13px;
+}
+
+.section-heading h2 {
+  margin: 4px 0 0;
+  font: 700 22px 'Manrope', sans-serif;
+  letter-spacing: -.7px;
+}
+
+.see-all {
+  padding: 5px 0;
+  border: 0;
+  background: none;
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.see-all span {
+  margin-left: 5px;
+  font-size: 17px;
+}
+
+/* CONTINUAR ASSISTINDO */
+
+.continue-grid {
+  display: grid;
+  grid-template-columns: repeat(3,minmax(0,1fr));
+  gap: 15px;
+}
+
+.continue-card {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  min-width: 0;
+  padding: 10px;
+  border: 1px solid #242a31;
+  border-radius: 11px;
+  background: linear-gradient(110deg,#1a1e24,#14181d);
+  cursor: pointer;
+  transition: .2s;
+}
+
+.continue-card:hover {
+  border-color: #55504a;
+  transform: translateY(-2px);
+}
+
+.continue-thumb {
+  flex: none;
+  width: 66px;
+  height: 67px;
+  border-radius: 7px;
+  object-fit: cover;
+}
+
+.continue-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.continue-info strong {
+  display: block;
+  overflow: hidden;
+  font-size: 12px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.continue-info span {
+  display: block;
+  margin-top: 4px;
+  color: #969da6;
+  font-size: 11px;
+}
+
+.progress {
+  height: 3px;
+  margin-top: 10px;
+  overflow: hidden;
+  border-radius: 5px;
+  background: #343a42;
+}
+
+.progress i {
+  display: block;
+  height: 100%;
+  border-radius: 5px;
+  background: var(--accent);
+}
+
+.continue-arrow {
+  padding: 0 4px;
+  color: #858d97;
+  font-size: 23px;
+}
+
+/* RECOMENDAÇÕES */
+
+.recommendations {
+  grid-template-columns: repeat(5,minmax(0,1fr));
+}
+
+.recommendations .poster-image {
+  aspect-ratio: 1.45 / 1;
+}
+
+/* COMUNIDADE */
+
+.community-strip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin: 37px 0 25px;
+  padding: 24px 27px;
+  border: 1px solid #292e35;
+  border-radius: 13px;
+  background: radial-gradient(
+    ellipse at 85% 50%,
+    #352719 0%,
+    #17191c 45%,
+    #121519 100%
+  );
+}
+
+.community-strip h2 {
+  margin: 6px 0;
+  font: 700 21px 'Manrope', sans-serif;
+}
+
+.community-strip p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.community-strip .btn {
+  white-space: nowrap;
+}
+
+/* RODAPÉ */
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 18px 0 24px;
+  border-top: 1px solid var(--line);
+  color: #606873;
+  font-size: 10px;
+  letter-spacing: .5px;
+}
+
+/* RESPONSIVIDADE */
+
+@media(max-width:1100px) {
+  .hero {
+    height: 270px;
+  }
+
+  .continue-grid {
+    gap: 9px;
+  }
+
+  .continue-card {
+    gap: 9px;
+    padding: 8px;
+  }
+
+  .continue-thumb {
+    width: 54px;
+    height: 58px;
+  }
+}
+
+@media(max-width:800px) {
+  .hero {
+    height: 300px;
+  }
+
+  .hero-copy {
+    max-width: 430px;
+    padding: 22px;
+  }
+
+  .hero-image {
+    background-position: 60% center;
+  }
+
+  .continue-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .continue-card:nth-child(n+3) {
+    display: none;
+  }
+
+  .community-strip {
+    gap: 15px;
+    padding: 20px;
+  }
+
+  .community-strip h2 {
+    font-size: 18px;
+  }
+
+  .recommendations {
+    grid-template-columns: repeat(3,minmax(0,1fr));
+  }
+
+  /* Limitações visuais aplicadas somente à Discover */
+  .section:not(.recommendations) .poster-card:nth-child(n+4) {
+    display: none;
+  }
+}
+
+@media(max-width:520px) {
+  .hero {
+    align-items: end;
+    height: 340px;
+  }
+
+  .hero:after {
+    background: linear-gradient(
+      0deg,
+      rgba(10,11,13,.98) 0%,
+      rgba(12,12,13,.8) 48%,
+      rgba(10,10,10,.05) 100%
+    );
+  }
+
+  .hero-image {
+    background-position: 62% center;
+  }
+
+  .hero-copy {
+    padding: 20px 18px;
+  }
+
+  .hero h1 {
+    font-size: 29px;
+  }
+
+  .hero-copy p {
+    font-size: 12px;
+  }
+
+  .hero-pagination {
+    top: 15px;
+    bottom: auto;
+  }
+
+  .hero-buttons {
+    gap: 8px;
+  }
+
+  .hero-buttons .btn {
+    padding: 0 11px;
+    font-size: 11px;
+  }
+
+  .section-heading h2 {
+    font-size: 19px;
+  }
+
+  .recommendations {
+    grid-template-columns: repeat(2,minmax(0,1fr));
+  }
+
+  .recommendations .poster-card:nth-child(3) {
+    display: none;
+  }
+
+  .community-strip {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .footer {
+    font-size: 9px;
+  }
+
+  .footer span:last-child {
+    display: none;
+  }
+}
