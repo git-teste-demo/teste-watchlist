@@ -1,5 +1,6 @@
 /* =========================================================
    SCREENLY — GLOBAL DESIGN SYSTEM
+   Variáveis, tipografia e componentes compartilhados
 ========================================================= */
 
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
@@ -35,10 +36,331 @@ body {
 }
 
 button,
-input {
+input,
+textarea,
+select {
   font: inherit;
 }
 
 button {
   cursor: pointer;
+}
+
+img {
+  max-width: 100%;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+/* TIPOGRAFIA COMPARTILHADA */
+
+.section-kicker {
+  color: #666e79;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1.65px;
+}
+
+/* BOTÕES */
+
+.btn {
+  height: 42px;
+  padding: 0 17px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  border-radius: 9px;
+  font-size: 12px;
+  font-weight: 700;
+  transition: .2s;
+}
+
+.btn-primary {
+  border: 1px solid var(--accent);
+  background: var(--accent);
+  color: #17120a;
+  box-shadow: 0 5px 18px #f6a51b20;
+}
+
+.btn-primary:hover {
+  background: #ffc04b;
+  transform: translateY(-1px);
+}
+
+.btn-outline {
+  border: 1px solid #66615a;
+  background: #11141999;
+  color: #f0f0f0;
+}
+
+.btn-outline:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.plus {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.text-link {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.text-link span {
+  padding-left: 4px;
+}
+
+/* AVATARES */
+
+.avatar {
+  display: grid;
+  place-items: center;
+  border: 0;
+  border-radius: 50%;
+  background: linear-gradient(135deg,#c99a71,#5c3c2b);
+  color: white;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 800;
+  box-shadow: 0 0 0 2px #252a30;
+}
+
+.avatar-small {
+  width: 33px;
+  height: 33px;
+  font-size: 12px;
+}
+
+/* COMPONENTES DE CATÁLOGO COMPARTILHADOS */
+
+.poster-grid {
+  display: grid;
+  grid-template-columns: repeat(5,minmax(0,1fr));
+  gap: 17px;
+}
+
+.poster-card {
+  position: relative;
+  min-width: 0;
+  cursor: pointer;
+}
+
+.poster-image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1.52 / 1;
+  border-radius: 10px;
+  background: #20242a;
+  object-fit: cover;
+  transition: transform .25s, filter .25s;
+}
+
+.poster-card:hover .poster-image {
+  transform: translateY(-3px);
+  filter: brightness(1.12);
+}
+
+.poster-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin: 9px 4px 0;
+}
+
+.poster-title {
+  overflow: hidden;
+  font-size: 13px;
+  font-weight: 700;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.poster-rating {
+  color: var(--accent2);
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+.poster-year {
+  margin: 4px 4px 0;
+  color: #858d97;
+  font-size: 11px;
+}
+
+/* ESTADOS VAZIOS */
+
+.empty-state {
+  padding: 50px 20px;
+  border: 1px dashed #343a42;
+  border-radius: 12px;
+  color: var(--muted);
+  text-align: center;
+}
+
+.empty-state strong {
+  display: block;
+  margin-bottom: 8px;
+  color: #e7e9ed;
+  font: 700 18px 'Manrope', sans-serif;
+}
+
+/* NOTIFICAÇÕES */
+
+.toast {
+  position: fixed;
+  bottom: 25px;
+  left: 50%;
+  z-index: 60;
+  padding: 12px 18px;
+  border: 1px solid #414851;
+  border-radius: 9px;
+  background: #242a30;
+  color: #f4f4f4;
+  font-size: 12px;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%,20px);
+  box-shadow: 0 10px 30px #0008;
+  transition: .25s;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translate(-50%,0);
+}
+
+/* MODAL DE DETALHES */
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: #000b;
+  backdrop-filter: blur(8px);
+}
+
+.modal-backdrop.open {
+  display: flex;
+}
+
+.detail-modal {
+  position: relative;
+  width: min(760px,100%);
+  overflow: hidden;
+  border: 1px solid #353b43;
+  border-radius: 16px;
+  background: #13171c;
+  box-shadow: 0 30px 100px #000b;
+}
+
+.modal-close {
+  position: absolute;
+  top: 13px;
+  right: 15px;
+  z-index: 2;
+  width: 34px;
+  height: 34px;
+  border: 0;
+  border-radius: 50%;
+  background: #080a0dcc;
+  color: #fff;
+  font-size: 24px;
+}
+
+.modal-art {
+  position: relative;
+  height: 230px;
+  background-position: center;
+  background-size: cover;
+}
+
+.modal-art:after {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg,#13171c,transparent 70%);
+  content: "";
+}
+
+.modal-body {
+  position: relative;
+  margin-top: -28px;
+  padding: 0 28px 28px;
+}
+
+.modal-body h2 {
+  margin: 8px 0;
+  font: 800 30px 'Manrope', sans-serif;
+}
+
+.modal-meta {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.modal-body p {
+  max-width: 600px;
+  color: #c1c6ce;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+/* RESPONSIVIDADE GLOBAL */
+
+@media(max-width:1100px) {
+  .poster-grid {
+    gap: 12px;
+  }
+
+  .poster-title {
+    font-size: 12px;
+  }
+}
+
+@media(max-width:800px) {
+  .poster-grid {
+    grid-template-columns: repeat(3,minmax(0,1fr));
+    row-gap: 18px;
+  }
+}
+
+@media(max-width:520px) {
+  .poster-grid {
+    grid-template-columns: repeat(2,minmax(0,1fr));
+    gap: 15px 11px;
+  }
+
+  .poster-image {
+    aspect-ratio: 1.35 / 1;
+  }
+
+  .modal-art {
+    height: 170px;
+  }
+
+  .modal-body {
+    padding: 0 20px 22px;
+  }
+
+  .modal-body h2 {
+    font-size: 24px;
+  }
 }
