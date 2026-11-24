@@ -5,108 +5,195 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#0b0d10" />
+
+  <meta name="description" content="Screenly — Descubra filmes e séries, organize sua watchlist e crie coleções pessoais." />
+
   <title>Screenly — Descubra seu próximo filme</title>
 
+  <!-- FONTS -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- GLOBAL STYLES -->
   <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="profile.css">
+
+  <!-- PAGE STYLES -->
+  <link rel="stylesheet" href="profile.css" />
+
 </head>
+
 <body>
 
   <div class="app-shell">
 
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
     <aside class="sidebar" id="sidebar">
 
-      <a class="brand" href="#">
-        <span class="brand-mark"><i></i><i></i><i></i></span>
+      <a class="brand" href="#" data-view="discover">
+        <span class="brand-mark">
+          <i></i>
+          <i></i>
+          <i></i>
+        </span>
+
         <span>SCREENLY</span>
       </a>
 
       <div class="side-label">MENU</div>
 
       <nav class="main-nav">
-        <button class="nav-item active" data-view="discover">
-          <span class="nav-icon">◉</span>Discover
+
+        <button class="nav-item active" type="button" data-view="discover">
+          <span class="nav-icon">◉</span>
+          Discover
         </button>
 
-        <button class="nav-item" data-view="movies">
-          <span class="nav-icon">▤</span>Movies
+        <button class="nav-item" type="button" data-view="movies">
+          <span class="nav-icon">▤</span>
+          Movies
         </button>
 
-        <button class="nav-item" data-view="shows">
-          <span class="nav-icon">▣</span>TV Shows
+        <button class="nav-item" type="button" data-view="shows">
+          <span class="nav-icon">▣</span>
+          TV Shows
         </button>
 
-        <button class="nav-item" data-view="watchlist">
-          <span class="nav-icon">♧</span>My Watchlist
+        <button class="nav-item" type="button" data-view="watchlist">
+          <span class="nav-icon">♧</span>
+          My Watchlist
           <span class="nav-count" id="watch-count">0</span>
         </button>
 
-        <button class="nav-item" data-view="collections">
-          <span class="nav-icon">▢</span>Collections
+        <button class="nav-item" type="button" data-view="collections">
+          <span class="nav-icon">▢</span>
+          Collections
         </button>
+
+        <button class="nav-item" type="button" data-view="profile">
+          <span class="nav-icon">◉</span>
+          My Profile
+        </button>
+
       </nav>
+
+      <!-- SIDEBAR BOTTOM -->
 
       <div class="sidebar-bottom">
 
         <div class="upgrade-card">
+
           <span class="upgrade-symbol">✦</span>
+
           <strong>Your world of cinema</strong>
+
           <p>Keep track of everything you love.</p>
-          <button class="text-link" data-view="collections">
+
+          <button class="text-link" type="button" data-view="collections">
             Explore library <span>↗</span>
           </button>
+
         </div>
 
-        <button class="profile-mini">
-          <span class="avatar avatar-small">A</span>
+        <button class="profile-mini" type="button" data-view="profile">
+
+          <span class="avatar avatar-small" id="sidebar-avatar">A</span>
+
           <span>
-            <strong>Alex Morgan</strong>
+            <strong id="sidebar-profile-name">Alex Morgan</strong>
             <small>Free account</small>
           </span>
+
           <span class="more">···</span>
+
         </button>
 
       </div>
+
     </aside>
+
+
+    <!-- =====================================================
+         MAIN AREA
+    ====================================================== -->
 
     <main class="main-area">
 
+      <!-- TOPBAR -->
+
       <header class="topbar">
 
-        <button class="mobile-menu" id="mobile-menu">☰</button>
+        <button
+          class="mobile-menu"
+          id="mobile-menu"
+          type="button"
+          aria-label="Abrir menu"
+        >
+          ☰
+        </button>
 
         <div class="greeting">
-          Good evening, <strong>Alex</strong>
+          Good evening,
+          <strong id="topbar-profile-name">Alex</strong>
           <span class="greeting-dot">✦</span>
         </div>
 
         <div class="top-actions">
 
           <label class="search-box">
+
             <span>⌕</span>
+
             <input
               type="search"
               id="global-search"
               placeholder="Search movies, series..."
               autocomplete="off"
             />
+
             <kbd>⌘ K</kbd>
+
           </label>
 
-          <button class="icon-button notification-button" id="notifications">
+          <button
+            class="icon-button notification-button"
+            id="notifications"
+            type="button"
+            aria-label="Notificações"
+          >
             ♧<i></i>
           </button>
 
-          <button class="avatar avatar-top">A</button>
+          <button
+            class="avatar avatar-top"
+            id="topbar-avatar"
+            type="button"
+            data-view="profile"
+            aria-label="Abrir perfil"
+          >
+            A
+          </button>
 
         </div>
+
       </header>
 
+
+      <!-- =====================================================
+           APPLICATION CONTENT
+           O JavaScript renderiza as páginas neste elemento.
+      ====================================================== -->
+
       <div class="content" id="content">
+
+        <!-- DISCOVER / HOMEPAGE -->
 
         <section class="hero">
 
@@ -137,94 +224,137 @@
 
             <div class="hero-buttons">
 
-              <button class="btn btn-primary" data-detail="Dune: Part Two">
+              <button
+                class="btn btn-primary"
+                type="button"
+                data-detail="Dune: Part Two"
+              >
                 ▶ <span>Explore movie</span>
               </button>
 
-              <button class="btn btn-outline" data-add="Dune: Part Two">
+              <button
+                class="btn btn-outline"
+                type="button"
+                data-add="Dune: Part Two"
+              >
                 <span class="plus">＋</span>
                 Add to watchlist
               </button>
 
             </div>
+
           </div>
 
           <div class="hero-image"></div>
 
           <div class="hero-pagination">
             <span class="selected"></span>
-            <i></i><i></i><i></i>
+            <i></i>
+            <i></i>
+            <i></i>
           </div>
 
         </section>
 
+
+        <!-- TRENDING -->
+
         <section class="section">
 
           <div class="section-heading">
+
             <div>
               <span class="section-kicker">WHAT'S POPULAR</span>
               <h2>Trending</h2>
             </div>
 
-            <button class="see-all" data-view="movies">
+            <button class="see-all" type="button" data-view="movies">
               See all <span>→</span>
             </button>
+
           </div>
 
           <div class="poster-grid" id="trending-grid"></div>
 
         </section>
 
+
+        <!-- CONTINUE EXPLORING -->
+
         <section class="section continue-section">
 
           <div class="section-heading">
+
             <div>
               <span class="section-kicker">PICK UP WHERE YOU LEFT OFF</span>
               <h2>Continue exploring</h2>
             </div>
 
-            <button class="see-all" data-view="shows">
+            <button class="see-all" type="button" data-view="shows">
               See all <span>→</span>
             </button>
+
           </div>
 
           <div class="continue-grid" id="continue-grid"></div>
 
         </section>
 
+
+        <!-- RECOMMENDATIONS -->
+
         <section class="section">
 
           <div class="section-heading">
+
             <div>
               <span class="section-kicker">CURATED FOR YOUR TASTE</span>
               <h2>Picked for you</h2>
             </div>
 
-            <button class="see-all" data-view="movies">
+            <button class="see-all" type="button" data-view="movies">
               Discover more <span>→</span>
             </button>
+
           </div>
 
-          <div class="poster-grid recommendations" id="recommend-grid"></div>
+          <div
+            class="poster-grid recommendations"
+            id="recommend-grid"
+          ></div>
 
         </section>
+
+
+        <!-- COMMUNITY -->
 
         <section class="community-strip">
 
           <div>
+
             <span class="section-kicker">BEYOND THE SCREEN</span>
+
             <h2>Good stories are better shared.</h2>
+
             <p>
               Save your favorites, build collections and keep your
               personal cinema close.
             </p>
+
           </div>
 
-          <button class="btn btn-outline" data-view="collections">
+          <button
+            class="btn btn-outline"
+            type="button"
+            data-view="collections"
+          >
             Explore collections <span>↗</span>
           </button>
 
         </section>
+
+
+        <!-- FOOTER -->
 
         <footer class="footer">
           <span>© 2026 SCREENLY</span>
@@ -232,16 +362,49 @@
         </footer>
 
       </div>
+
     </main>
+
   </div>
 
-  <div class="toast" id="toast"></div>
 
-  <div class="modal-backdrop" id="modal" aria-hidden="true">
+  <!-- =====================================================
+       TOAST NOTIFICATIONS
+  ====================================================== -->
 
-    <div class="detail-modal">
+  <div
+    class="toast"
+    id="toast"
+    role="status"
+    aria-live="polite"
+  ></div>
 
-      <button class="modal-close" id="modal-close">×</button>
+
+  <!-- =====================================================
+       DETAIL MODAL
+  ====================================================== -->
+
+  <div
+    class="modal-backdrop"
+    id="modal"
+    aria-hidden="true"
+  >
+
+    <div
+      class="detail-modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modal-title"
+    >
+
+      <button
+        class="modal-close"
+        id="modal-close"
+        type="button"
+        aria-label="Fechar"
+      >
+        ×
+      </button>
 
       <div class="modal-art" id="modal-art"></div>
 
@@ -257,20 +420,47 @@
 
         <div class="modal-actions">
 
-          <button class="btn btn-primary" id="modal-add">
+          <button
+            class="btn btn-primary"
+            id="modal-add"
+            type="button"
+          >
             ＋ Add to watchlist
           </button>
 
-          <button class="btn btn-outline" id="modal-close-secondary">
+          <button
+            class="btn btn-outline"
+            id="modal-close-secondary"
+            type="button"
+          >
             Close
           </button>
 
         </div>
+
       </div>
+
     </div>
+
   </div>
 
-  <script src="app.js"></script>
+
+  <!-- =====================================================
+       JAVASCRIPT — SCREENLY
+       Os scripts devem permanecer nesta ordem.
+  ====================================================== -->
+
+  <script src="js/data.js" defer></script>
+  <script src="js/core.js" defer></script>
+  <script src="js/state.js" defer></script>
+  <script src="js/layout.js" defer></script>
+  <script src="js/profile.js" defer></script>
+  <script src="js/catalog.js" defer></script>
+  <script src="js/movies.js" defer></script>
+  <script src="js/shows.js" defer></script>
+  <script src="js/discover.js" defer></script>
+  <script src="js/collections.js" defer></script>
+  <script src="js/app.js" defer></script>
 
 </body>
 </html>
