@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -6,11 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#0b0d10" />
 
-  <meta name="description" content="Screenly — Descubra filmes e séries, organize sua watchlist e crie coleções pessoais." />
+  <meta
+    name="description"
+    content="Screenly — Descubra filmes e séries, organize sua watchlist e crie coleções pessoais."
+  />
 
   <title>Screenly — Descubra seu próximo filme</title>
 
-  <!-- FONTS -->
+  <!-- FONTES -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -19,25 +21,34 @@
     rel="stylesheet"
   >
 
-  <!-- GLOBAL STYLES -->
-  <link rel="stylesheet" href="styles.css" />
+  <!-- CSS GLOBAL -->
+  <link rel="stylesheet" href="./css/styles.css" />
 
-  <!-- PAGE STYLES -->
-  <link rel="stylesheet" href="profile.css" />
+  <!-- ESTRUTURA DA APLICAÇÃO -->
+  <link rel="stylesheet" href="./css/layout.css" />
+
+  <!-- CSS DAS PÁGINAS -->
+  <link rel="stylesheet" href="./css/discover.css" />
+  <link rel="stylesheet" href="./css/movies.css" />
+  <link rel="stylesheet" href="./css/shows.css" />
+  <link rel="stylesheet" href="./css/collections.css" />
+  <link rel="stylesheet" href="./css/profile.css" />
 
 </head>
 
 <body>
 
+  <!-- =====================================================
+       APPLICATION
+  ====================================================== -->
+
   <div class="app-shell">
 
-    <!-- =====================================================
-         SIDEBAR
-    ====================================================== -->
+    <!-- SIDEBAR -->
 
     <aside class="sidebar" id="sidebar">
 
-      <a class="brand" href="#" data-view="discover">
+      <a class="brand" href="#" aria-label="Screenly início">
         <span class="brand-mark">
           <i></i>
           <i></i>
@@ -49,62 +60,57 @@
 
       <div class="side-label">MENU</div>
 
-      <nav class="main-nav">
+      <nav class="main-nav" aria-label="Navegação principal">
 
-        <button class="nav-item active" type="button" data-view="discover">
+        <button class="nav-item active" data-view="discover">
           <span class="nav-icon">◉</span>
           Discover
         </button>
 
-        <button class="nav-item" type="button" data-view="movies">
+        <button class="nav-item" data-view="movies">
           <span class="nav-icon">▤</span>
           Movies
         </button>
 
-        <button class="nav-item" type="button" data-view="shows">
+        <button class="nav-item" data-view="shows">
           <span class="nav-icon">▣</span>
           TV Shows
         </button>
 
-        <button class="nav-item" type="button" data-view="watchlist">
+        <button class="nav-item" data-view="watchlist">
           <span class="nav-icon">♧</span>
           My Watchlist
           <span class="nav-count" id="watch-count">0</span>
         </button>
 
-        <button class="nav-item" type="button" data-view="collections">
+        <button class="nav-item" data-view="collections">
           <span class="nav-icon">▢</span>
           Collections
         </button>
 
-        <button class="nav-item" type="button" data-view="profile">
-          <span class="nav-icon">◉</span>
-          My Profile
-        </button>
-
       </nav>
-
-      <!-- SIDEBAR BOTTOM -->
 
       <div class="sidebar-bottom">
 
         <div class="upgrade-card">
-
           <span class="upgrade-symbol">✦</span>
 
           <strong>Your world of cinema</strong>
 
-          <p>Keep track of everything you love.</p>
+          <p>
+            Keep track of everything you love.
+          </p>
 
-          <button class="text-link" type="button" data-view="collections">
+          <button class="text-link" data-view="collections">
             Explore library <span>↗</span>
           </button>
-
         </div>
 
-        <button class="profile-mini" type="button" data-view="profile">
+        <button class="profile-mini" data-view="profile">
 
-          <span class="avatar avatar-small" id="sidebar-avatar">A</span>
+          <span class="avatar avatar-small" id="sidebar-avatar">
+            A
+          </span>
 
           <span>
             <strong id="sidebar-profile-name">Alex Morgan</strong>
@@ -119,10 +125,7 @@
 
     </aside>
 
-
-    <!-- =====================================================
-         MAIN AREA
-    ====================================================== -->
+    <!-- MAIN AREA -->
 
     <main class="main-area">
 
@@ -133,7 +136,6 @@
         <button
           class="mobile-menu"
           id="mobile-menu"
-          type="button"
           aria-label="Abrir menu"
         >
           ☰
@@ -165,18 +167,17 @@
           <button
             class="icon-button notification-button"
             id="notifications"
-            type="button"
             aria-label="Notificações"
           >
-            ♧<i></i>
+            ♧
+            <i></i>
           </button>
 
           <button
             class="avatar avatar-top"
             id="topbar-avatar"
-            type="button"
             data-view="profile"
-            aria-label="Abrir perfil"
+            aria-label="Perfil"
           >
             A
           </button>
@@ -185,17 +186,13 @@
 
       </header>
 
-
-      <!-- =====================================================
-           APPLICATION CONTENT
-           O JavaScript renderiza as páginas neste elemento.
-      ====================================================== -->
+      <!-- PAGE CONTENT -->
 
       <div class="content" id="content">
 
-        <!-- DISCOVER / HOMEPAGE -->
+        <!-- DISCOVER PAGE -->
 
-        <section class="hero">
+        <section class="hero" aria-label="Destaque">
 
           <div class="hero-copy">
 
@@ -207,9 +204,9 @@
             <h1>DUNE: PART TWO</h1>
 
             <p>
-              Paul Atreides unites with Chani and the Fremen while on a
-              warpath of revenge against the conspirators who destroyed
-              his family.
+              Paul Atreides unites with Chani and the Fremen while
+              on a warpath of revenge against the conspirators who
+              destroyed his family.
             </p>
 
             <div class="hero-meta">
@@ -226,7 +223,6 @@
 
               <button
                 class="btn btn-primary"
-                type="button"
                 data-detail="Dune: Part Two"
               >
                 ▶ <span>Explore movie</span>
@@ -234,7 +230,6 @@
 
               <button
                 class="btn btn-outline"
-                type="button"
                 data-add="Dune: Part Two"
               >
                 <span class="plus">＋</span>
@@ -245,7 +240,11 @@
 
           </div>
 
-          <div class="hero-image"></div>
+          <div
+            class="hero-image"
+            role="img"
+            aria-label="Paisagem desértica cinematográfica"
+          ></div>
 
           <div class="hero-pagination">
             <span class="selected"></span>
@@ -256,10 +255,9 @@
 
         </section>
 
-
         <!-- TRENDING -->
 
-        <section class="section">
+        <section class="section" id="trending-section">
 
           <div class="section-heading">
 
@@ -268,7 +266,7 @@
               <h2>Trending</h2>
             </div>
 
-            <button class="see-all" type="button" data-view="movies">
+            <button class="see-all" data-view="movies">
               See all <span>→</span>
             </button>
 
@@ -278,7 +276,6 @@
 
         </section>
 
-
         <!-- CONTINUE EXPLORING -->
 
         <section class="section continue-section">
@@ -286,11 +283,14 @@
           <div class="section-heading">
 
             <div>
-              <span class="section-kicker">PICK UP WHERE YOU LEFT OFF</span>
+              <span class="section-kicker">
+                PICK UP WHERE YOU LEFT OFF
+              </span>
+
               <h2>Continue exploring</h2>
             </div>
 
-            <button class="see-all" type="button" data-view="shows">
+            <button class="see-all" data-view="shows">
               See all <span>→</span>
             </button>
 
@@ -300,7 +300,6 @@
 
         </section>
 
-
         <!-- RECOMMENDATIONS -->
 
         <section class="section">
@@ -308,11 +307,14 @@
           <div class="section-heading">
 
             <div>
-              <span class="section-kicker">CURATED FOR YOUR TASTE</span>
+              <span class="section-kicker">
+                CURATED FOR YOUR TASTE
+              </span>
+
               <h2>Picked for you</h2>
             </div>
 
-            <button class="see-all" type="button" data-view="movies">
+            <button class="see-all" data-view="movies">
               Discover more <span>→</span>
             </button>
 
@@ -325,34 +327,26 @@
 
         </section>
 
-
         <!-- COMMUNITY -->
 
         <section class="community-strip">
 
           <div>
-
             <span class="section-kicker">BEYOND THE SCREEN</span>
 
             <h2>Good stories are better shared.</h2>
 
             <p>
-              Save your favorites, build collections and keep your
-              personal cinema close.
+              Save your favorites, build collections and keep
+              your personal cinema close.
             </p>
-
           </div>
 
-          <button
-            class="btn btn-outline"
-            type="button"
-            data-view="collections"
-          >
+          <button class="btn btn-outline" data-view="collections">
             Explore collections <span>↗</span>
           </button>
 
         </section>
-
 
         <!-- FOOTER -->
 
@@ -367,9 +361,8 @@
 
   </div>
 
-
   <!-- =====================================================
-       TOAST NOTIFICATIONS
+       TOAST
   ====================================================== -->
 
   <div
@@ -378,7 +371,6 @@
     role="status"
     aria-live="polite"
   ></div>
-
 
   <!-- =====================================================
        DETAIL MODAL
@@ -400,7 +392,6 @@
       <button
         class="modal-close"
         id="modal-close"
-        type="button"
         aria-label="Fechar"
       >
         ×
@@ -423,7 +414,6 @@
           <button
             class="btn btn-primary"
             id="modal-add"
-            type="button"
           >
             ＋ Add to watchlist
           </button>
@@ -431,7 +421,6 @@
           <button
             class="btn btn-outline"
             id="modal-close-secondary"
-            type="button"
           >
             Close
           </button>
@@ -444,23 +433,13 @@
 
   </div>
 
-
   <!-- =====================================================
-       JAVASCRIPT — SCREENLY
-       Os scripts devem permanecer nesta ordem.
+       JAVASCRIPT
+       Os arquivos serão organizados e validados antes de
+       substituir o carregamento atual por módulos separados.
   ====================================================== -->
 
-  <script src="js/data.js" defer></script>
-  <script src="js/core.js" defer></script>
-  <script src="js/state.js" defer></script>
-  <script src="js/layout.js" defer></script>
-  <script src="js/profile.js" defer></script>
-  <script src="js/catalog.js" defer></script>
-  <script src="js/movies.js" defer></script>
-  <script src="js/shows.js" defer></script>
-  <script src="js/discover.js" defer></script>
-  <script src="js/collections.js" defer></script>
-  <script src="js/app.js" defer></script>
+  <script src="./app.js" defer></script>
 
 </body>
 </html>
