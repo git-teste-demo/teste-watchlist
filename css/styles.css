@@ -1,0 +1,44 @@
+/* =========================================================
+   SCREENLY — GLOBAL DESIGN SYSTEM
+========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --bg: #090b0e;
+  --panel: #101318;
+  --panel2: #171b21;
+  --line: #252a31;
+  --text: #f3f4f6;
+  --muted: #9299a4;
+  --soft: #c3c7ce;
+  --accent: #f6a51b;
+  --accent2: #ffc15a;
+  --sidebar: 232px;
+  --radius: 15px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
